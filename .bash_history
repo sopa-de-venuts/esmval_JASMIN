@@ -802,3 +802,139 @@ ls cru_jra/cru_jra_2.0/
 ls crutem/
 ls PDSI/cd
 dc
+ls
+vim datasets.txt 
+exit
+cd /badc/
+cd cmip6
+ls
+cd data/
+ls
+CMIP6
+cd CMIP6/HighResMIP/
+ls
+cd CNRM-CERFACS/
+ls
+cd CNRM-CM6-1/
+ls
+ls hist-1950/
+exit
+vim recipes/recipe_JASMIN.yml 
+ls bash_scripts/
+sh bash_scripts/execute_recipe.sh 
+esmval_env 
+sh bash_scripts/execute_recipe.sh 
+vim ../jvegas/config-developer.yml 
+vim config-files/config-user.yml 
+cd /group_workspaces/jasmin4/esmeval/obsdata-v2
+ls
+cd..
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+ls jasmin
+ls jasmin2
+ls jasmin2/leicester/
+ls jasmin3 
+ls jasmin3/esgf_repl/
+ls jasmin4
+ls jasmin4/esmeval/
+ls jasmin4/esmeval/esmvaltool-tutorial-docs/
+ls jasmin4/esmeval/esmvaltool-tutorial-docs/ukesm-April-2020/
+ls jasmin4/esmeval/esmvaltool-tutorial-docs/ukesm-April-2020/examples/
+cd jasmin4/esmeval/
+ls
+vim recipe_hands_on_example.yml 
+vim environment.sh 
+vim config-user.yml 
+ls obsdata-v2/
+ls obsdata-v2/Tier1
+ls obsdata-v2/Tier2
+ls obsdata-v2/Tier3
+ls obsdata-v2/Tier3/ERA-Interim/
+ls obsdata-v2/Tier3/ERA-Interim/*tas*
+ls obsdata-v2/Tier3/ERA-Interim/*pr*
+wq
+ls obsdata-v2/Tier2/CRU/OBS_CRU_reanaly_TS4.02_Amon_tas*
+ls obsdata-v2/Tier2/CRU/OBS_CRU_reanaly_TS4.02_Amon_pr*
+ls obsdata-v2/Tier2
+ls obsdata-v2/Tier3
+ls obsdata-v2/Tier1
+cd /badc/
+ls
+cd cmip6
+ls
+cd data/
+ls
+cd CMIP6/CMIP/
+ls
+cd AWI/AWI-ESM-1-1-LR/
+ls
+cd ..
+find ./ ssp585
+ls
+ls CCCma/
+ls CCCma/CanESM5
+ls CCCma/CanESM5/esm-piControl/
+ls CCCma/CanESM5/amip/
+cd ..
+ls
+cd ScenarioMIP/
+ls
+ls AWI/
+ls AWI/AWI-CM-1-1-MR/
+cd ..
+ls
+cd HighResMIP/
+ls
+find ./ ssp585
+find ./ -name ssp585
+ls
+ls ECMWF/ECMWF-IFS-HR/highresSST-present/r1i1p1f1/Amon/*tas*
+ls 
+ls CAS/FGOALS-f3-H/highresSST-present/r1i1p1f1/
+ls CMCC/CMCC-CM2-HR4/highresSST-future/r1i1p1f1/Amon/tas/gn/latest/tas_Amon_CMCC-CM2-HR4_highresSST-future_r1i1p1f1_gn_20
+ls CMCC/CMCC-CM2-HR4/highresSST-future/r1i1p1f1/Amon/tas/gn/latest/tas_Amon_CMCC-CM2-HR4_highresSST-future_r1i1p1f1_gn_20*
+ls
+ls CMCC/CMCC-CM2-HR4/highres-future/r1i1p1f1/Amon/tas/gn/latest/tas_Amon_CMCC-CM2-HR4_highres-future_r1i1p1f1_gn_20
+ls 
+ls CMCC/CMCC-CM2-
+ls EC-Earth-Consortium/EC-Earth3P/
+ls EC-Earth-Consortium/EC-Earth3P-HR/
+ls -lt EC-Earth-Consortium/EC-Earth3P/
+ls 
+ls MOHC/HadGEM3-GC31-LL
+ls MOHC/HadGEM3-GC31-LM
+ls MOHC/HadGEM3-GC31-MH
+ls MOHC/HadGEM3-GC31-MM
+ls
+ls MRI/MRI-AGCM3-2-S
+find ./ -name gn
+find . -name gn
+find . -name gr
+find ./ -type f -iname gn
+find . -type f -iname gn
+find . -type f -name gn
+find ./ -type f -name gn
+find ./ -type d -name gn
+find ./ -type d -name gr
+find . -type d -name gr
+find . -type d -name gn
+ls 
+ls CNRM-CERFACS/CNRM-CM6-1-HR/hist-1950/r1i1p1f2/Amon/tas/gr/
+ls
+ls MOHC/HadGEM3-GC31-HM/hist-1950/r1i1p1f1/Amon/tas/gn/
+ls EC-Earth-Consortium/EC-Earth3P/hist-1950/r1i1p2f1/Amon/tas/gr/
+ls
+ls MRI/MRI-AGCM3-2-H/highresSST-present/r1i1p1f1/Amon/tas/gn/
+ls NOAA-GFDL/GFDL-CM4C192/hist-1950/r1i1p1f1/Amon/ts/gr3/cd
+cd
+sh bash_scripts/execute_recipe.sh 
+vim /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_094414/run/mean/mean/log.txt
+sh bash_scripts/execute_recipe.sh 
+cd /group_workspaces/jasmin4/
+ls
+exit

@@ -88,6 +88,7 @@ class Example(object):
             # OBS --> rean data, they don't have atribute 'exp'
             if 'OBS' not in alias:
                 exp = data[alias][0]['exp']
+                activity = data[alias][0]['activity']
             else:
                 exp = 'a'
             # LIST THE CUBES ACCORDING TO THE 'EXP' THEY BELONG
@@ -101,7 +102,7 @@ class Example(object):
                 if pr_exist:
                     pr = self.regrid_time(pr, start_year_rean, end_year_rean)
                     rean_ls_pr.append(pr)
-            elif exp == 'ssp585':
+            elif ((activity == 'HighResMIP')and(exp == 'highres-future')) or ((activity == 'cmip')and(exp == 'ssp585')):
                 if (start_year_ssp == 0) & (end_year_ssp == 0):
                     start_year_ssp = variables['tas'][0]['start_year']
                     end_year_ssp = variables['tas'][0]['end_year']
@@ -111,7 +112,7 @@ class Example(object):
                 if pr_exist:
                     pr = self.regrid_time(pr, start_year_ssp, end_year_ssp)
                     ssp_ls_pr.append(pr)
-            elif exp == 'historical':
+            elif ((activity == 'HighResMIP')and(exp == 'hist-1950')) or ((activity == 'cmip')and(exp == 'historical')):
                 if (start_year_hist == 0) & (end_year_hist == 0):
                     start_year_hist = variables['tas'][0]['start_year']
                     end_year_hist = variables['tas'][0]['end_year']
@@ -124,19 +125,19 @@ class Example(object):
 
         # COMPUTE EVERYTHING & PLOT
         cube_ls_tas, ts_ls_tas = self.compute(rean_ls_tas, ssp_ls_tas, hist_ls_tas, 'tas')
-        cube_ls_pr, ts_ls_pr = self.compute(rean_ls_pr, ssp_ls_pr, hist_ls_pr, 'pr')
+#        cube_ls_pr, ts_ls_pr = self.compute(rean_ls_pr, ssp_ls_pr, hist_ls_pr, 'pr')
         self.tas_plot_caller(cube_ls_tas)
-        self.pr_plot_caller(cube_ls_pr)
+#        self.pr_plot_caller(cube_ls_pr)
         # # Compute standard deviation of the ensembles & plot
         # # TODO: Tidy the timeseries bit ---------
         STDs_tas = self.timeseries_std([ssp_ls_tas, hist_ls_tas, rean_ls_tas])
-        STDs_pr = self.timeseries_std([ssp_ls_pr, hist_ls_pr, rean_ls_pr])
+#        STDs_pr = self.timeseries_std([ssp_ls_pr, hist_ls_pr, rean_ls_pr])
         start_year_ls = [start_year_ssp, start_year_hist, start_year_rean]
         end_year_ls = [end_year_ssp, end_year_hist, end_year_rean]
         self.timeseries_plot(ts_ls_tas, start_year_ls, end_year_ls,
                              '_tas', STDs_tas, '($^o$C)', 'Temperature')
-        self.timeseries_plot(ts_ls_pr, start_year_ls, end_year_ls,
-                             '_pr', STDs_pr, '(mm month$^{-1}$)', 'Precipitation')
+#        self.timeseries_plot(ts_ls_pr, start_year_ls, end_year_ls,
+#                             '_pr', STDs_pr, '(mm month$^{-1}$)', 'Precipitation')
 
     def compute(self, rean_ls, ssp_ls, hist_ls, sht_nm):
 
