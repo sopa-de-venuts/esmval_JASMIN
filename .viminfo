@@ -73,18 +73,20 @@ $
 	r
 
 # File marks:
-'0  4  2  ~/recipes/recipe_JASMIN.yml
-'1  1  0  ~/bash_scripts/demo.sh
-'2  1  0  ~/bash_scripts/submit-all.sh
-'3  1  0  ~/bash_scripts/extract_HRMIP_proj.sh
-'4  70  3  ~/recipes/recipe_JASMIN.yml
-'5  13  1  ~/recipes/recipe_JASMIN.yml
-'6  13  0  ~/.bashrc
-'7  37  35  ~/recipes/recipe_JASMIN.yml
-'8  34  44  ~/recipes/recipe_JASMIN.yml
-'9  38  0  ~/recipes/recipe_JASMIN.yml
+'0  15  0  ~/.gitignore
+'1  4  2  ~/recipes/recipe_JASMIN.yml
+'2  1  0  ~/bash_scripts/demo.sh
+'3  1  0  ~/bash_scripts/submit-all.sh
+'4  1  0  ~/bash_scripts/extract_HRMIP_proj.sh
+'5  70  3  ~/recipes/recipe_JASMIN.yml
+'6  13  1  ~/recipes/recipe_JASMIN.yml
+'7  13  0  ~/.bashrc
+'8  37  35  ~/recipes/recipe_JASMIN.yml
+'9  34  44  ~/recipes/recipe_JASMIN.yml
 
 # Jumplist (newest first):
+-'  15  0  ~/.gitignore
+-'  1  0  ~/.gitignore
 -'  4  2  ~/recipes/recipe_JASMIN.yml
 -'  70  7  ~/recipes/recipe_JASMIN.yml
 -'  1  0  ~/bash_scripts/demo.sh
@@ -184,6 +186,12 @@ $
 -'  2  0  ~/datasets
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	"	15	0
+	^	15	0
+	.	14	12
+	+	14	12
 
 > ~/recipes/recipe_JASMIN.yml
 	"	4	2
@@ -409,6 +417,3 @@ $
 	+	7	17
 	+	7	84
 	+	6	113
-
-> ~/bash_scripts/exe
-	"	1	0

@@ -1,0 +1,15 @@
+.cache
+.conda
+.ssh
+.idl
+.vim
+.xemacs
+.bash_history
+.bash_profile
+.bashrc
+.emacs
+.flexlmrc
+.gitconfig
+.viminfo
+.bash_logout
+
