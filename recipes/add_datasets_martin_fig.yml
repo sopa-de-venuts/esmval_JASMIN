@@ -1,0 +1,91 @@
+# ESMValToo
+---
+documentation:
+  description: |
+  authors:
+    - vegas-regidor_javier
+
+#### historic ######
+tas_hist: &tas_hist
+  additional_datasets:
+    - {project: CMIP6, exp: historical, dataset: ACCESS-CM2, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gn, start_year: 1960 , end_year: 1961}
+    - {project: CMIP6, exp: historical, dataset: CESM2, expid: historical_i0p1, ensemble: r1i1p1f1 , mip: Amon, grid: gn, start_year: 1960, end_year: 1961}
+   #- {project: CMIP6, exp: historical, dataset: IPSL-CM6A-LR, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gr, start_year: 1960 , end_year: 1961}
+   #- {project: CMIP6, exp: historical, dataset: KACE-1-0-G, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gr, start_year: 1960 , end_year: 1961}
+   #- {project: CMIP6, exp: historical, dataset: MPI-ESM1-2-HR, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gn, start_year: 1960 , end_year: 1961}
+   #- {project: CMIP6, exp: historical, dataset: NorESM2-LM, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gn, start_year: 1960 , end_year: 1961}
+   #- {project: CMIP6, exp: historical, dataset: NorESM2-MM, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gn, start_year: 1960 , end_year: 1961}
+
+##### projections ####
+tas_ssp: &tas_ssp
+  additional_datasets:
+    - {project: CMIP6, exp: ssp585, dataset: IPSL-CM6A-LR, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gr, start_year: 2015 , end_year: 2016}
+    - {project: CMIP6, exp: ssp585, dataset: MPI-ESM1-2-HR, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: ACCESS-CM2, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: AWI-CM-1-1-MR, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: CESM2, expid: ssp585_i1p1, ensemble: r1i1p1f1 , mip: Amon, grid: gn, start_year: 2015, end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: BCC-CSM2-MR, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: CAMS-CSM1-0, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: CESM2-WACCM, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: INM-CM4-8, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gr1, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: INM-CM5-0, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gr1, start_year: 2015 , end_year: 2016}
+ #  - {project: CMIP6, exp: ssp585, dataset: KACE-1-0-G, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gr, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: NorESM2-LM, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+  # - {project: CMIP6, exp: ssp585, dataset: NorESM2-MM, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gn, start_year: 2015 , end_year: 2016}
+
+preprocessors:
+  med_tas_hist:
+    regrid:
+      target_grid: ACCESS-CM2
+      scheme: linear
+    mask_landsea:
+      mask_out: sea
+    extract_region:
+      start_longitude: -10
+      end_longitude: 40
+      start_latitude: 25
+      end_latitude: 50 
+    extract_season:
+      season: 'djf'
+    annual_statistics:
+      operator: 'mean'
+    multi_model_statistics:
+      span: overlap
+      statistics: [mean ]
+
+  med_tas_ssp:
+    regrid:
+      target_grid: IPSL-CM6A-LR
+      scheme: linear
+    mask_landsea:
+      mask_out: sea
+    extract_region:
+      start_longitude: -10
+      end_longitude: 40
+      start_latitude: 25
+      end_latitude: 50 
+    extract_season:
+      season: 'djf'
+    annual_statistics:
+      operator: 'mean'
+    multi_model_statistics:
+      span: overlap
+      statistics: [mean ]
+  
+diagnostics:
+  mean:
+    description: "Calculate MedR seasonal trends diagnostic"
+    variables:
+      tas:
+       short_name: tas 
+       additional_datasets: *tas_ssp
+       mip: Amon
+       preprocessor: med_tas_ssp
+#      tas_hist: 
+#       short_name: tas
+#       additional_datasets: *tas_hist
+#       mip: Amon
+#       preprocessor: med_tas_hist
+    scripts:
+      mean:
+       script: /esarchive/scratch/jcos/esmvaltool/scripts/blank.py

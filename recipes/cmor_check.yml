@@ -1,0 +1,103 @@
+# ESMValToo
+---
+documentation:
+  description: |
+  authors:
+    - vegas-regidor_javier
+datasets:
+#### observations ####
+    - {project: OBS, institute: uea, type: obs, freq_folder: monthly_mean, short_name: tas, freq_base: '', dataset: cru-v4.02, start_year: 1960 , end_year: 2010}
+    - {project: OBS, institute: uea, type: obs, freq_folder: monthly_mean, short_name: pr, freq_base: '', dataset: cru-v4.02, start_year: 1960 , end_year: 2010}
+#### reanalysis ####
+# ERA40
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f6h, dataset: era40, start_year: 1960 , end_year: 2002}
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: prlr, freq_base: _f6h, dataset: era40, start_year: 1960 , end_year: 2002} prlr ERROR
+ # ERA5
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f1h, dataset: era5, start_year: 1979 , end_year: 2014} # CMOR ERROR
+   #- {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: prlr, freq_base: _s0-24h, dataset: era5, start_year: 1979 , end_year: 2014} prlr ERROR
+ # NCEP
+   # - {project: OBS, institute: noaa, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f6h , dataset: ncep-reanalysis, start_year: 1960 , end_year: 2014}  # CMOR ERROR
+   # - {project: OBS, institute: noaa, type: recon, freq_folder: monthly_mean, short_name: prlr, freq_base: _f6h , dataset: ncep-reanalysis, start_year: 1960 , end_year: 2014} prlr ERROR
+ # ERAINTERIM
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f6h, dataset: erainterim, start_year: 1979 , end_year: 2014} # CMOR ERROR
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: prlr, freq_base: '', dataset: erainterim, start_year: 1979 , end_year: 2014} # prlr ERROR
+
+
+#### historic ######
+   - &cmip6_historical {project: CMIP6, exp: historical, dataset: ACCESS-CM2, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gn, start_year: 1960 , end_year: 2014}
+   - {<<: *cmip6_historical, dataset: CESM2, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: IPSL-CM6A-LR, mip: Amon, grid: gr}
+   # - {<<: *cmip6_historical, dataset: KACE-1-0-G, mip: Amon, grid: gr}
+   # - {<<: *cmip6_historical, dataset: MPI-ESM1-2-HR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: NorESM2-LM, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: NorESM2-MM, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: CAMS-CSM1-0, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: CESM2-WACCM, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: INM-CM4-8, mip: Amon, grid: gr1}
+   # - {<<: *cmip6_historical, dataset: INM-CM5-0, mip: Amon, grid: gr1}
+   # - {<<: *cmip6_historical, dataset: AWI-CM-1-1-MR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_historical, dataset: BCC-CSM2-MR, mip: Amon, grid: gn}
+
+
+##### projections ####
+   - &cmip6_ssp585 {project: CMIP6, exp: ssp585, dataset: IPSL-CM6A-LR, expid: ssp585_i1p1, ensemble: r1i1p1f1, grid: gr, start_year: 2015 , end_year: 2050}
+   - {<<: *cmip6_ssp585, dataset: MPI-ESM1-2-HR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: ACCESS-CM2, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: AWI-CM-1-1-MR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CESM2, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: BCC-CSM2-MR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CAMS-CSM1-0, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CESM2-WACCM, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: INM-CM4-8, mip: Amon, grid: gr1}
+   # - {<<: *cmip6_ssp585, dataset: INM-CM5-0, mip: Amon, grid: gr1}
+   # - {<<: *cmip6_ssp585, dataset: KACE-1-0-G, mip: Amon, grid: gr}
+   # - {<<: *cmip6_ssp585, dataset: NorESM2-LM, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: NorESM2-MM, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CanESM5, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CNRM-CM6-1, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CNRM-CM6-1-HR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: CNRM-ESM2-1, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: ACCESS-ESM1-5, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: FIO-ESM-2-0, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: MIROC6, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: HadGEM3-GC31-LL, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: MIROC-ES2L, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: MPI-ESM1-2-LR, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: MRI-ESM2-0, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: GISS-E2-1-G, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: GFDL-ESM4, mip: Amon, grid: gn}
+   # - {<<: *cmip6_ssp585, dataset: NESM3, mip: Amon, grid: gn}
+
+
+preprocessors:
+  med:
+    regrid:
+      target_grid: 1x1
+      scheme: linear
+    extract_region:
+      start_longitude: -10 #-10
+      end_longitude: 40
+      start_latitude: 25 #25
+      end_latitude: 50
+    #mask_landsea:
+      #mask_out: sea
+    extract_season:
+      season: 'jja' #'djf'
+    annual_statistics:
+      operator: 'mean'
+
+diagnostics:
+  mean:
+    description: "Calculate MedR seasonal trends diagnostic"
+    variables:
+      tas:
+       mip: Amon
+       short_name: tas
+       preprocessor: med
+      pr:
+       short_name: pr
+       mip: Amon
+       preprocessor: med
+    scripts:
+      mean:
+       script: /esarchive/scratch/jcos/esmvaltool/scripts/blank.py

@@ -1,0 +1,70 @@
+# ESMValToo
+---
+documentation:
+  description: |
+  authors:
+    - vegas-regidor_javier
+datasets:
+
+#### observations ####
+
+#### reanalysis ####
+ # ERAINTERIM
+   - {dataset: ERA-Interim, project: OBS6, tier: 3, type: reanaly, version: 1, start_year: 1979, end_year: 2014} 
+#### HighResMIP ####
+   - &HighResMIP {dataset: HadGEM3-GC31-LM, project: CMIP6, exp: highresSST-present, ensemble: r1i1p1f1, grid: gn, start_year: 1979, end_year: 2014}
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-MM}
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-HM}
+
+   - &cmip {dataset: AWI-CM-1-1-MR, project: CMIP6, ensemble: r1i1p1f1, exp: historical, grid: gn, start_year: 1979, end_year: 2014}
+   - {<<: *cmip, dataset: BCC-CSM2-MR} 
+   - {<<: *cmip, dataset: BCC-ESM1} 
+   - {<<: *cmip, dataset: TaiESM1} 
+   #- {<<: *cmip, dataset: CAS-ESM2-0} 
+   - {<<: *cmip, dataset: FGOALS-f3-L, grid: gr} 
+   - {<<: *cmip, dataset: FGOALS-g3} 
+   #- {<<: *cmip, dataset: E3SM-1-1} 
+   #- {<<: *cmip, dataset: E3SM-1-1-ECA} 
+   - {<<: *cmip, dataset: EC-Earth3,  grid: gr, ensemble: r2i1p1f1} 
+   - {<<: *cmip, dataset: FIO-ESM-2-0} 
+   - {<<: *cmip, dataset: MRI-ESM2-0} 
+   #- {<<: *cmip, dataset: GISS-E2-1-G} 
+   #- {<<: *cmip, dataset: GISS-E2-1-G-CC} 
+   #- {<<: *cmip, dataset: GISS-E2-1-H} 
+   - {<<: *cmip, dataset: GFDL-CM4, grid: gr1} 
+   - {<<: *cmip, dataset: SAM0-UNICON} 
+   - {<<: *cmip, dataset: CIESM, grid: gr} 
+   - {<<: *cmip, dataset: MCM-UA-1-0} 
+
+preprocessors:
+  med:
+    regrid:
+      target_grid: 1x1
+      scheme: linear
+    extract_region:
+      start_longitude: -10
+      end_longitude: 40
+      start_latitude: 25
+      end_latitude: 50
+    extract_season:
+      season: 'djf'
+    annual_statistics:
+      operator: 'mean'
+    # regrid_time:
+    #   frequency: yr
+
+diagnostics:
+  mean:
+    description: "Calculate MedR seasonal trends diagnostic"
+    variables:
+      tas:
+       mip: Amon
+       short_name: tas
+       preprocessor: med
+      #pr:
+       #short_name: pr
+       #mip: Amon
+       #preprocessor: med
+    scripts:
+      mean:
+       script: /home/users/pcos/scripts/blank.py

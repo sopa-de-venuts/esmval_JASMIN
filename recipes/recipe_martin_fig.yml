@@ -1,0 +1,115 @@
+# ESMValToo
+---
+documentation:
+  description: |
+  authors:
+    - vegas-regidor_javier
+datasets:
+
+#### observations ####
+   - {project: OBS, institute: uea, type: obs, freq_folder: monthly_mean, short_name: tas, freq_base: '', dataset: cru-v4.02, start_year: 1960 , end_year: 2002}
+   - {project: OBS, institute: uea, type: obs, freq_folder: monthly_mean, short_name: pr, freq_base: '', dataset: cru-v4.02, start_year: 1960 , end_year: 2002}
+
+#### reanalysis ####
+# ERA40
+   - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f6h, dataset: era40, start_year: 1960 , end_year: 2002}
+   - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: pr, freq_base: _f6h, dataset: era40, start_year: 1960 , end_year: 2002}
+ # ERA5
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f1h, dataset: era5, start_year: 1979 , end_year: 2014} # CMOR ERROR
+
+ # NCEP
+   - {project: OBS, institute: noaa, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f6h , dataset: ncep-reanalysis, start_year: 1960 , end_year: 2002}
+   - {project: OBS, institute: noaa, type: recon, freq_folder: monthly_mean, short_name: pr, freq_base: _f6h , dataset: ncep-reanalysis, start_year: 1960 , end_year: 2002}
+ # ERAINTERIM
+   # - {project: OBS, institute: ecmwf, type: recon, freq_folder: monthly_mean, short_name: tas, freq_base: _f6h, dataset: erainterim, start_year: 1979 , end_year: 2014} # CMOR ERROR
+
+
+#### historic ######
+   - &cmip6_historical {project: CMIP6, exp: historical, dataset: ACCESS-CM2, expid: historical_i0p1, ensemble: r1i1p1f1, grid: gn, start_year: 1960 , end_year: 2014}
+   - {<<: *cmip6_historical, dataset: CESM2, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: IPSL-CM6A-LR, mip: Amon, grid: gr}
+   - {<<: *cmip6_historical, dataset: KACE-1-0-G, mip: Amon, grid: gr}
+   - {<<: *cmip6_historical, dataset: MPI-ESM1-2-HR, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: NorESM2-LM, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: NorESM2-MM, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: CAMS-CSM1-0, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: CESM2-WACCM, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: CanESM5, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: ACCESS-ESM1-5, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: MIROC6, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: MPI-ESM1-2-LR, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: MRI-ESM2-0, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: GISS-E2-1-G, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: NESM3, mip: Amon, grid: gn}
+   - {<<: *cmip6_historical, dataset: CNRM-CM6-1, ensemble: r1i1p1f2, grid: gr}
+   - {<<: *cmip6_historical, dataset: CNRM-CM6-1-HR, ensemble: r1i1p1f2, grid: gr}
+   - {<<: *cmip6_historical, dataset: CNRM-ESM2-1, ensemble: r1i1p1f2, grid: gr}
+   - {<<: *cmip6_historical, dataset: HadGEM3-GC31-LL, ensemble: r1i1p1f3, grid: gn}
+   - {<<: *cmip6_historical, dataset: MIROC-ES2L, ensemble: r1i1p1f2, grid: gn}
+   - {<<: *cmip6_historical, dataset: GFDL-ESM4, mip: Amon, grid: gr1}
+   # ------------------------------------------ #
+   # ------------- Data not found ------------- #
+   # ------------------------------------------ #
+   # - {<<: *cmip6_historical, dataset: FIO-ESM-2-0, mip: Amon, grid: gn}
+
+##### projections ####
+   - &cmip6_ssp585 {project: CMIP6, exp: ssp585, dataset: IPSL-CM6A-LR, ensemble: r1i1p1f1, expid: ssp585_i1p1, grid: gr, start_year: 2015 , end_year: 2050}
+   - {<<: *cmip6_ssp585, dataset: MPI-ESM1-2-HR, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: ACCESS-CM2, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: AWI-CM-1-1-MR, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: CESM2, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: BCC-CSM2-MR, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: CAMS-CSM1-0, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: CESM2-WACCM, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: INM-CM4-8, mip: Amon, grid: gr1}
+   - {<<: *cmip6_ssp585, dataset: INM-CM5-0, mip: Amon, grid: gr1}
+   - {<<: *cmip6_ssp585, dataset: KACE-1-0-G, mip: Amon, grid: gr}
+   - {<<: *cmip6_ssp585, dataset: NorESM2-LM, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: NorESM2-MM, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: ACCESS-ESM1-5, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: FIO-ESM-2-0, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: MIROC6, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: MPI-ESM1-2-LR, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: MRI-ESM2-0, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: NESM3, mip: Amon, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: CNRM-CM6-1, ensemble: r1i1p1f2, grid: gr}
+   - {<<: *cmip6_ssp585, dataset: CNRM-CM6-1-HR, ensemble: r1i1p1f2, grid: gr}
+   - {<<: *cmip6_ssp585, dataset: CNRM-ESM2-1, ensemble: r1i1p1f2, grid: gr}
+   - {<<: *cmip6_ssp585, dataset: HadGEM3-GC31-LL, ensemble: r1i1p1f3, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: MIROC-ES2L, ensemble: r1i1p1f2, grid: gn}
+   - {<<: *cmip6_ssp585, dataset: GFDL-ESM4, mip: Amon, grid: gr1}
+   - {<<: *cmip6_ssp585, dataset: CanESM5, expid: ssp585_i1p2, grid: gn}
+
+
+preprocessors:
+  med:
+    regrid:
+      target_grid: 1x1
+      scheme: linear
+    extract_region:
+      start_longitude: -10
+      end_longitude: 40
+      start_latitude: 25
+      end_latitude: 50
+    extract_season:
+      season: 'djf'
+    annual_statistics:
+      operator: 'mean'
+    # regrid_time:
+    #   frequency: yr
+
+diagnostics:
+  mean:
+    description: "Calculate MedR seasonal trends diagnostic"
+    variables:
+      tas:
+       mip: Amon
+       short_name: tas
+       preprocessor: med
+      pr:
+       short_name: pr
+       mip: Amon
+       preprocessor: med
+    scripts:
+      mean:
+       script: /esarchive/scratch/jcos/esmvaltool/scripts/martin_plots.py
