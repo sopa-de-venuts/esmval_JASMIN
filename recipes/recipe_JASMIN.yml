@@ -8,7 +8,7 @@ datasets:
 
 #### observations ####
  # CRU
-   - {dataset: CRU, project: OBS, tier: 2, type: reanaly, version: TS4.02, start_year: 1960, end_year: 2014} 
+   - {dataset: CRU, project: OBS, tier: 2, type: reanaly, version: TS4.02, start_year: 1979, end_year: 2014} 
 
 #### reanalysis ####
  # ERAINTERIM
@@ -17,7 +17,7 @@ datasets:
 #### historical exp #####
 
 
-#   - &cmip {dataset: AWI-CM-1-1-MR, project: CMIP6, ensemble: r1i1p1f1, exp: ssp585, grid: gn, start_year: 1960, end_year: 2014}
+#   - &cmip {dataset: AWI-CM-1-1-MR, project: CMIP6, ensemble: r1i1p1f1, exp: ssp585, grid: gn, start_year: 1979, end_year: 2014}
 #   - {<<: *cmip, dataset: BCC-CSM2-MR} 
    #- {<<: *cmip, dataset: BCC-ESM1} 
    #- {<<: *cmip, dataset: TaiESM1} 
@@ -50,14 +50,14 @@ datasets:
    #- {<<: *HighResMIP, dataset: EC-Earth3P, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1]}  
    #- {<<: *HighResMIP, dataset: EC-Earth3P-HR, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1]} 
    # Historical HighResMIP
-   - {<<: *HighResMIP, dataset: CMCC-CM2-HR4, exp: hist-1950, start_year: 1960, end_year: 2014}
-   - {<<: *HighResMIP, dataset: CMCC-CM2-VHR4, exp: hist-1950, start_year: 1960, end_year: 2014} 
-   #- {<<: *HighResMIP, dataset: CNRM-CM6-1, grid: gr, ensemble: r1i1p1f2, exp: hist-1950, start_year: 1960, end_year: 2014} 
-   #- {<<: *HighResMIP, dataset: CNRM-CM6-1-HR, grid: gr, ensemble: r1i1p1f2, exp: hist-1950, start_year: 1960, end_year: 2014} 
-   #- {<<: *HighResMIP, dataset: HadGEM3-GC31-HM, ensemble: [r1i1p1f1, r1i2p1f1], exp: hist-1950, start_year: 1960, end_year: 2014} 
-   #- {<<: *HighResMIP, dataset: HadGEM3-GC31-MM, ensemble: [r1i1p1f1, r1i2p1f1], exp: hist-1950, start_year: 1960, end_year: 2014} 
-   #- {<<: *HighResMIP, dataset: EC-Earth3P, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1], exp: hist-1950, start_year: 1960, end_year: 2014}  
-   #- {<<: *HighResMIP, dataset: EC-Earth3P-HR, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1], exp: hist-1950, start_year: 1960, end_year: 2014} 
+   - {<<: *HighResMIP, dataset: CMCC-CM2-HR4, exp: hist-1950, start_year: 1979, end_year: 2014}
+   - {<<: *HighResMIP, dataset: CMCC-CM2-VHR4, exp: hist-1950, start_year: 1979, end_year: 2014} 
+   #- {<<: *HighResMIP, dataset: CNRM-CM6-1, grid: gr, ensemble: r1i1p1f2, exp: hist-1950, start_year: 1979, end_year: 2014} 
+   #- {<<: *HighResMIP, dataset: CNRM-CM6-1-HR, grid: gr, ensemble: r1i1p1f2, exp: hist-1950, start_year: 1979, end_year: 2014} 
+   #- {<<: *HighResMIP, dataset: HadGEM3-GC31-HM, ensemble: [r1i1p1f1, r1i2p1f1], exp: hist-1950, start_year: 1979, end_year: 2014} 
+   #- {<<: *HighResMIP, dataset: HadGEM3-GC31-MM, ensemble: [r1i1p1f1, r1i2p1f1], exp: hist-1950, start_year: 1979, end_year: 2014} 
+   #- {<<: *HighResMIP, dataset: EC-Earth3P, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1], exp: hist-1950, start_year: 1979, end_year: 2014}  
+   #- {<<: *HighResMIP, dataset: EC-Earth3P-HR, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1], exp: hist-1950, start_year: 1979, end_year: 2014} 
 
    #- &ScenarioMIP {dataset: AWI-CM-1-1-MR, project: CMIP6, ensemble: r1i1p1f1, exp: ssp585, grid: gn, start_year: 2015, end_year: 2050}
    #- {<<: *ScenarioMIP, dataset: BCC-CSM2-MR} 
@@ -105,10 +105,10 @@ diagnostics:
        mip: Amon
        short_name: tas
        preprocessor: med
-#      pr:
-#       short_name: pr
-#       mip: Amon
-#       preprocessor: med
+      pr:
+       short_name: pr
+       mip: Amon
+       preprocessor: med
     scripts:
       mean:
        script: /home/users/pcos/scripts/martin_plots.py

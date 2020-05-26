@@ -65,6 +65,7 @@ class Example(object):
         ssp_ls_tas, ssp_ls_pr = [], []
         rean_ls_tas, rean_ls_pr = [], []
         start_year_ssp, end_year_ssp, start_year_hist, end_year_hist, start_year_rean, end_year_rean = 0, 0, 0, 0, 0, 0
+        obs_names = ' '
         w_density = iris.coords.AuxCoord(1000, long_name='water_density', units='kg m-3')
         # iteration that sorts the dataset cubes into it's own experiment list.
         # (hist_ls, ssp_ls, rean_ls)
@@ -89,8 +90,10 @@ class Example(object):
             if 'OBS' not in alias:
                 exp = data[alias][0]['exp']
                 activity = data[alias][0]['activity']
+                model_names = data[alias][0]['project']  # 'activity' ??
             else:
                 exp = 'a'
+                obs_names = obs_names + data[alias][0]['dataset'] + ', '
             # LIST THE CUBES ACCORDING TO THE 'EXP' THEY BELONG
             if exp == 'a':
                 if (start_year_rean == 0) & (end_year_rean == 0):
@@ -123,21 +126,30 @@ class Example(object):
                     pr = self.regrid_time(pr, start_year_hist, end_year_hist)
                     hist_ls_pr.append(pr)
 
-        # COMPUTE EVERYTHING & PLOT
-        cube_ls_tas, ts_ls_tas = self.compute(rean_ls_tas, ssp_ls_tas, hist_ls_tas, 'tas')
-#        cube_ls_pr, ts_ls_pr = self.compute(rean_ls_pr, ssp_ls_pr, hist_ls_pr, 'pr')
-        self.tas_plot_caller(cube_ls_tas)
-#        self.pr_plot_caller(cube_ls_pr)
-        # # Compute standard deviation of the ensembles & plot
-        # # TODO: Tidy the timeseries bit ---------
-        STDs_tas = self.timeseries_std([ssp_ls_tas, hist_ls_tas, rean_ls_tas])
-#        STDs_pr = self.timeseries_std([ssp_ls_pr, hist_ls_pr, rean_ls_pr])
         start_year_ls = [start_year_ssp, start_year_hist, start_year_rean]
         end_year_ls = [end_year_ssp, end_year_hist, end_year_rean]
-        self.timeseries_plot(ts_ls_tas, start_year_ls, end_year_ls,
-                             '_tas', STDs_tas, '($^o$C)', 'Temperature')
-#        self.timeseries_plot(ts_ls_pr, start_year_ls, end_year_ls,
-#                             '_pr', STDs_pr, '(mm month$^{-1}$)', 'Precipitation')
+
+        # COMPUTE EVERYTHING & PLOT
+        # TAS
+        if (not rean_ls_pr) or (not ssp_ls_pr) or (not hist_ls_pr):
+            print('No temperature to diagnose')
+        else:
+            cube_ls_tas, ts_ls_tas = self.compute(rean_ls_tas, ssp_ls_tas, hist_ls_tas, 'tas')
+            self.tas_plot_caller(cube_ls_tas, obs_names.upper(), model_names, str(start_year_rean))
+            # # Compute standard deviation of the ensembles & plot
+            STDs_tas = self.timeseries_std([ssp_ls_tas, hist_ls_tas, rean_ls_tas])
+            self.timeseries_plot(ts_ls_tas, start_year_ls, end_year_ls,
+                                 '_tas', STDs_tas, '($^o$C)', 'Temperature')
+        # PR
+        if (not rean_ls_pr) or (not ssp_ls_pr) or (not hist_ls_pr):
+            print('No precipitation to diagnose')
+        else:
+            cube_ls_pr, ts_ls_pr = self.compute(rean_ls_pr, ssp_ls_pr, hist_ls_pr, 'pr')
+            self.pr_plot_caller(cube_ls_pr, obs_names.upper(), model_names, str(start_year_rean))
+            # # Compute standard deviation of the ensembles & plot
+            STDs_pr = self.timeseries_std([ssp_ls_pr, hist_ls_pr, rean_ls_pr])
+            self.timeseries_plot(ts_ls_pr, start_year_ls, end_year_ls,
+                                 '_pr', STDs_pr, '(mm month$^{-1}$)', 'Precipitation')
 
     def compute(self, rean_ls, ssp_ls, hist_ls, sht_nm):
 
@@ -350,55 +362,55 @@ class Example(object):
 
 # ------------------------- ploting functions ----------------------------------
 
-    def tas_plot_caller(self, tas_ls):
+    def tas_plot_caller(self, tas_ls, obs_names, model_names, start_y_hist):
         ssp_trends_tas, trend_bias_tas, clim_bias_tas, rean_trends_tas = tas_ls
         # Plot the tas maps.
         deg = '$^o$C'
         deg_decade = '$^o$C decade$^{-1}$'
-        title = 'CMIP6 SSP585 trends future period (2015-2050)'
+        title = model_names+' SSP585 trends future period (2015-2050)'
         self.med_r_plot(
             mask_landsea(ssp_trends_tas, ['/blablabla/where/the/fx/at/'], 'sea', True),
             [0, 0.8, 0.05], title, 'ssp_trends_tas',
             plt.cm.Reds, deg_decade)
-        title = 'CMIP6 historical trend bias (1960-2002)'
+        title = model_names+' historical trend bias ('+start_y_hist+'-2002)'
         self.med_r_plot(
             mask_landsea(trend_bias_tas, ['/blablabla/where/the/fx/at/'], 'sea', True),
             [-0.25, 0.25, 0.025], title, 'hist_trend_bias_tas',
             plt.cm.RdBu_r, deg_decade)
-        title = 'CMIP6 historical climatological bias (1960-2014)'
+        title = model_names+' historical climatological bias ('+start_y_hist+'-2014)'
         self.med_r_plot(
             mask_landsea(clim_bias_tas, ['/blablabla/where/the/fx/at/'],
                          'sea', True),
             [-4, 4, 0.4], title, 'hist_clim_bias_tas',
             plt.cm.RdBu_r, deg)
-        title = 'AVG. reanalysis trend (1960-2002)'
+        title = obs_names+'avg. trend ('+start_y_hist+'-2002)'
         self.med_r_plot(
             mask_landsea(rean_trends_tas, ['/blablabla/where/the/fx/at/'], 'sea', True),
             [0, 0.5, 0.05], title, 'era40_trend_tas',
             plt.cm.Reds, deg_decade)
 
-    def pr_plot_caller(self, pr_ls):
+    def pr_plot_caller(self, pr_ls, obs_names, model_names, start_y_hist):
         ssp_trends_pr, trend_bias_pr, clim_bias_pr, rean_trends_pr = pr_ls
         # Plot the pr maps.
         pr = 'mm month$^{-1}$'
         pr_decade = 'mm month$^{-1}$ decade$^{-1}$'
-        title = 'CMIP6 SSP585 trends future period (2015-2050)'
+        title = model_names+' SSP585 trends future period (2015-2050)'
         self.med_r_plot(
             mask_landsea(ssp_trends_pr, ['/blablabla/where/the/fx/at/'], 'sea', True),
             [-10, 10, 1], title, 'ssp_trends_pr',
             plt.cm.BrBG, pr_decade)
-        title = 'CMIP6 historical trend bias (1960-2014)'
+        title = model_names+' historical trend bias ('+start_y_hist+'-2014)'
         self.med_r_plot(
             mask_landsea(trend_bias_pr, ['/blablabla/where/the/fx/at/'], 'sea', True),
             [-10, 10, 1], title, 'hist_trend_bias_pr',
             plt.cm.BrBG, pr_decade)
-        title = 'CMIP6 historical climatological bias (1960-2002)'
+        title = model_names+' historical climatological bias ('+start_y_hist+'-2002)'
         self.med_r_plot(
             mask_landsea(clim_bias_pr, ['/blablabla/where/the/fx/at/'],
                          'sea', True),
             [-20, 20, 2], title, 'hist_clim_bias_pr',
             plt.cm.BrBG, pr)
-        title = 'AVG. reanalysis trend (1960-2002)'
+        title = obs_names+'avg. reanalysis trend ('+start_y_hist+'-2002)'
         self.med_r_plot(
             mask_landsea(rean_trends_pr, ['/blablabla/where/the/fx/at/'], 'sea', True),
             [-10, 10, 1], title, 'era40_trend_pr',

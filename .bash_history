@@ -1,75 +1,3 @@
-exit
-pwd
-pdu
-groups
-cd ..
-ls
-cd ..
-ls
-cd ..
-ls
-cd open
-cd var
-ls
-cd ..
-ls media/
-ls -lt
-ls -lt datacentre/
-ls -lt datacentre/archvol5
-module available
-ls
-cd badc/
-ls
-ls cordex
-cd cordex/
-ls
-cd data/
-ls
-ls -lt
-cd CORDEX/
-ls
-cd output/
-ls
-cd EUR-11
-ls
-cd MOHC/
-ls
-cd MOHC-HadGEM2-ES/
-ls
-ls historical
-cd rcp85/r1i1p1/MOHC-HadREM3-GA7-05/v1/mon/pr/latest/pr_EUR-11_MOHC-HadGEM2-ES_rcp85_r1i1p1_MOHC-HadREM3-GA7-05_v1_mon_20
-cd 
-vim datasets
-cd /badc
-ls
-cd cru/
-ls
-cd data/
-lsls
-ls
-vim 00README 
-ls cru_cy
-exit
-pwd
-cd ..
-ls
-cd ..
-ls
-cd ..
-ls
-cd group_workspaces/
-ls
-cd ..
-cd gws
-ls
-cd ..
-ssh -A pcos@jasmin-sci3.ceda.ac.uk
-ls
-vim datasets 
-cd /badc
-cd /
-ls
-ls work/
 cd work/
 ls
 cd ..
@@ -937,4 +865,136 @@ vim /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_094414/run/mean/mean/log.t
 sh bash_scripts/execute_recipe.sh 
 cd /group_workspaces/jasmin4/
 ls
+exit
+cd /group_workspaces/jasmin4/esmeval/obsdata-v2
+ls
+ls Tier1
+ls Tier2
+cd Tier2
+ls
+cd CRU/OBS_CRU_reanaly_TS4.02_Amon_:[B
+cd
+sh bash_scripts/execute_recipe.sh 
+esmval_env 
+sh bash_scripts/execute_recipe.sh 
+cd /group_workspaces/jasmin4/esmeval/obsdata-v2
+ls
+ls Tier1
+ls Tier2
+ls Tier3
+ls Tier3/ERA-Interim/OBS6_ERA-Interim_reanaly_1_tas*
+ls Tier3/ERA-Interim/OBS6_ERA-Interim_reanaly_1_Amon_*
+cd
+sh bash_scripts/execute_recipe.sh 
+exit
+vim .bashrc 
+vim recipes/recipe_JASMIN.yml 
+sci2
+exit
+ls
+git config --global use.name "jcos"
+git config --global user.email "josep.cos@bsc.es"
+git config --global --list
+git remote -v
+git clone git@earth.bsc.es:jcos/esmval_jasmin_pcos.git
+git clone https://earth.bsc.es/gitlab/jcos/esmval_jasmin_pcos.git
+git status
+ls
+rm -r esmval_jasmin_pcos/
+ls
+rm -r esmval_jasmin_pcos/
+ls
+ls exs/
+rm -r exs
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin git@earth.bsc.es:jcos/esmval_jasmin_pcos.git
+git push origin master
+git remote add origin https://earth.bsc.es/gitlab/jcos/esmval_jasmin_pcos.git
+git push -u origin master
+vim bash_scripts/extract_HRMIP_proj.sh 
+vim bash_scripts/submit-all.sh 
+vim bash_scripts/demo.sh 
+rm bash_scripts/demo.sh 
+ls
+vim recipes/recipe_JASMIN.yml 
+ls
+git init
+ls -la
+rm -r .git
+rm -rf .git
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/sopa-de-venuts/esmval_JASMIN.git
+git push -u origin master
+git pull https://github.com/sopa-de-venuts/esmval_JASMIN.git
+ls
+ls -lt
+git status
+git add .
+git commit -m "initial commit"
+git push origin master
+git add .gitignore
+vim .gitignore
+git add .
+git commit -m ".gitignore"
+git push origin master
+vim recipes/recipe_JASMIN.yml 
+vim bash_scripts/execute_recipe.sh 
+vim recipes/recipe_JASMIN.yml 
+vim scripts/blank
+vim scripts/blank.py 
+vim recipes/recipe_JASMIN.yml 
+vim config-files/config-user.yml 
+vim recipes/recipe_JASMIN.yml 
+vim scripts/martin_plots.py 
+vim recipes/recipe_JASMIN.yml 
+vim bash_scripts/execute_recipe.sh 
+vim recipes/recipe_JASMIN.yml 
+vim scripts/martin_plots.py 
+vim config-files/config-user.yml 
+ls -lt scripts/
+vim recipes/recipe_JASMIN.yml 
+vim bash_scripts/execute_recipe.sh 
+ls
+ls latest_recipie 
+cd /work/scratch-nom
+vim config-files/config-user.yml 
+ls
+ls figures/
+git add .
+git commit -m "figures test"
+git push origin master
+exit
+cd work
+cd /work/scratch-nompiio/
+ls
+cd pcos/
+ls
+vim recipe_JASMIN_20200525_100733/run/mean/mean/log.txt recipe_JASMIN_2020052
+top
+cd /work/scratch-nompiio/
+ls
+cd pcos/
+ls -lt
+cd recipe_JASMIN_20200525_110456
+ls
+cd plots
+cd mean/mean/
+ls
+cd ..
+mv mean/ ~/figures/
+exit
+vim config-files/config-user.yml 
+sci2
+cd /group_workspaces/
+ls
+cd
+cd /
+ls
+cd work/
+ls
+sci2
 exit

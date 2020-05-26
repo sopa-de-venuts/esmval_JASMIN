@@ -8,17 +8,18 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~Msle0/\<HighResMIP\>
+~MSle0/1979
 
 # Last Substitute Search Pattern:
-~MSle0~&1979
+~MSle0~&1960
 
 # Last Substitute String:
-$1960
+$1979
 
 # Command Line History (newest to oldest):
 :wq
 :q
+:%s/1960/1979/gc
 :Wq
 :%s/1979/1960/gc
 :%s/[hist-1950, highresSST-present]/hist-1950/gc
@@ -29,6 +30,7 @@ $1960
 :qw
 
 # Search String History (newest to oldest):
+? 1960
 ? 1979
 ? [hist-1950, highresSST-present]
 ? \<HighResMIP\>
@@ -44,10 +46,8 @@ $1960
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	   #- {<<: *HighResMIP, dataset: EC-Earth3P, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1]}  
-	   #- {<<: *HighResMIP, dataset: EC-Earth3P-HR, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1]} 
-	   # Historical HighResMIP
+"0	CHAR	0
+	#
 "1	LINE	0
 	   # Historical HighResMIP
 "2	LINE	0
@@ -71,22 +71,30 @@ $1960
 	#
 
 # File marks:
-'0  21  0  ~/config-files/config-user.yml
-'1  264  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733/run/mean/mean/log.txt
-'2  139  0  ~/scripts/martin_plots.py
-'3  2  0  ~/recipes/recipe_JASMIN.yml
-'4  6  0  ~/bash_scripts/execute_recipe.sh
-'5  54  5  ~/recipes/recipe_JASMIN.yml
-'6  538  0  ~/scripts/martin_plots.py
-'7  111  0  ~/recipes/recipe_JASMIN.yml
-'8  20  111  ~/recipes/recipe_JASMIN.yml
-'9  24  0  ~/config-files/config-user.yml
+'0  356  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/log.txt
+'1  143  0  ~/scripts/martin_plots.py
+'2  114  0  ~/recipes/recipe_JASMIN.yml
+'3  8  0  ~/recipes/recipe_martin_fig.yml
+'4  1  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733
+'5  21  0  ~/config-files/config-user.yml
+'6  264  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733/run/mean/mean/log.txt
+'7  139  0  ~/scripts/martin_plots.py
+'8  2  0  ~/recipes/recipe_JASMIN.yml
+'9  6  0  ~/bash_scripts/execute_recipe.sh
 
 # Jumplist (newest first):
+-'  356  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/log.txt
+-'  1  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/log.txt
+-'  143  0  ~/scripts/martin_plots.py
+-'  139  8  ~/scripts/martin_plots.py
+-'  114  0  ~/recipes/recipe_JASMIN.yml
+-'  12  0  ~/recipes/recipe_JASMIN.yml
+-'  8  0  ~/recipes/recipe_martin_fig.yml
+-'  1  0  ~/recipes/recipe_martin_fig.yml
+-'  1  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733
 -'  21  0  ~/config-files/config-user.yml
 -'  264  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733/run/mean/mean/log.txt
 -'  1  0  /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733/run/mean/mean/log.txt
--'  139  0  ~/scripts/martin_plots.py
 -'  538  4  ~/scripts/martin_plots.py
 -'  2  0  ~/recipes/recipe_JASMIN.yml
 -'  54  3  ~/recipes/recipe_JASMIN.yml
@@ -122,7 +130,6 @@ $1960
 -'  4  2  ~/recipes/recipe_JASMIN.yml
 -'  15  0  ~/.gitignore
 -'  1  0  ~/.gitignore
--'  114  7  ~/recipes/recipe_JASMIN.yml
 -'  1  0  ~/bash_scripts/demo.sh
 -'  1  0  ~/bash_scripts/submit-all.sh
 -'  1  0  ~/bash_scripts/extract_HRMIP_proj.sh
@@ -173,65 +180,35 @@ $1960
 -'  54  13  ~/config-files/config-user-jv.yml
 -'  1  0  ~/config-files/config-user-jv.yml
 -'  91  6  ~/recipes/recipe_JASMIN.yml
--'  97  7  ~/recipes/recipe_JASMIN.yml
--'  17  0  ~/recipes/recipe_JASMIN.yml
--'  1  0  ~/recipes/recipe_martin_fig.yml
--'  1  0  ~/bash_scripts/launch_esmvaltool.sh
--'  1  0  ~/laun
--'  9  0  ~/config-files/config-user-bsc.yml
--'  1  0  ~/config-files/config-user-bsc.yml
--'  1  0  /gws/smf/j04/primavera/conf-files/config-user.yml
 
 # History of marks within files (newest to oldest):
 
-> ~/config-files/config-user.yml
-	"	21	0
-	^	23	1
-	.	23	0
-	+	24	2
-	+	25	38
-	+	50	0
-	+	52	7
-	+	25	0
-	+	18	0
-	+	31	41
-	+	18	0
-	+	31	36
-	+	18	0
-	+	18	0
-	+	23	0
-	+	32	0
-	+	31	8
-	+	23	0
+> /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/log.txt
+	"	356	0
 
-> /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733/run/mean/mean/log.txt
-	"	264	0
-
-> ~/bash_scripts/execute_recipe.sh
-	"	6	114
-	^	6	115
-	.	6	114
-	+	6	0
-	+	6	114
+> ~/scripts/martin_plots.py
+	"	143	0
+	^	139	1
+	.	143	0
+	+	104	38
+	+	114	33
+	+	104	40
+	+	114	51
+	+	138	0
+	+	133	0
+	+	129	0
+	+	127	0
+	+	139	0
+	+	131	0
+	+	133	0
+	+	137	0
+	+	142	0
+	+	143	0
 
 > ~/recipes/recipe_JASMIN.yml
-	"	114	51
+	"	114	0
 	^	114	52
-	.	114	51
-	+	49	0
-	+	51	0
-	+	53	0
-	+	53	0
-	+	51	0
-	+	49	58
-	+	51	60
-	+	53	45
-	+	53	32
-	+	61	0
-	+	61	0
-	+	61	0
-	+	53	59
-	+	53	44
+	.	60	0
 	+	61	64
 	+	61	0
 	+	53	0
@@ -318,20 +295,53 @@ $1960
 	+	53	3
 	+	54	3
 	+	114	51
+	+	108	0
+	+	109	0
+	+	110	0
+	+	111	0
+	+	11	0
+	+	20	0
+	+	53	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	59	0
+	+	60	0
 
-> ~/scripts/martin_plots.py
-	"	139	0
-	^	139	1
-	.	139	0
-	+	104	38
-	+	114	33
-	+	104	40
-	+	114	51
-	+	138	0
-	+	133	0
-	+	129	0
-	+	127	0
-	+	139	0
+> ~/bash_scripts/execute_recipe.sh
+	"	6	0
+	^	6	115
+	.	6	114
+	+	6	0
+	+	6	114
+
+> /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_100733/run/mean/mean/log.txt
+	"	264	0
+
+> ~/recipes/recipe_martin_fig.yml
+	"	8	0
+
+> ~/config-files/config-user.yml
+	"	21	0
+	^	23	1
+	.	23	0
+	+	24	2
+	+	25	38
+	+	50	0
+	+	52	7
+	+	25	0
+	+	18	0
+	+	31	41
+	+	18	0
+	+	31	36
+	+	18	0
+	+	18	0
+	+	23	0
+	+	32	0
+	+	31	8
+	+	23	0
 
 > /work/scratch-nompiio/pcos/recipe_JASMIN_20200525_094414/run/mean/mean/log.txt
 	"	697	0
@@ -393,26 +403,3 @@ $1960
 	+	14	69
 	+	7	0
 	+	8	31
-
-> /gws/smf/j04/primavera/envs/esmval_primavera/lib/python3.7/site-packages/esmvalcore/config-developer.yml
-	"	12	0
-
-> ~/config-files/config-developer.yml
-	"	23	4
-	^	33	22
-	.	33	0
-	+	38	38
-	+	38	14
-	+	38	0
-	+	53	12
-	+	70	0
-	+	71	0
-	+	70	12
-	+	71	16
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	37	0
-	+	33	93
-	+	33	0
