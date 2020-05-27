@@ -1,243 +1,3 @@
-cd work/
-ls
-cd ..
-ls media/
-ls tmp/
-cd ..
-ls
-ls gws
-ls home/
-ls var
-exit
-ssh -A pcos@jasmin-sci2.ceda.ac.uk
-ls
-cd /
-ls
-ls -lt
-ls badc/
-cd badc/cmip6/
-ls
-ls metadata/
-cd data/
-ls
-cd CMIP6/
-ls
-cd HighResMIP/
-ls
-cd ECMWF/
-s
-ls
-ECMWF-IFS-HR
-cd ECMWF-IFS-HR
-ls
-ls hist-1950/
-ls spinup-1950/
-ls spinup-1950/r1i1p1f1/
-ls spinup-1950/r1i1p1f1/Omon/
-ls hist-1950/r1i1p1f1/+
-ls hist-1950/r1i1p1f1/
-ls hist-1950/r1i1p1f1/Amon/
-cd /home/users/valeriu/roses
-ls
-cd u-bd684/
-ls
-cd
-esmvaltool --help
-xit
-exit
-exi
-exit
-cd /badc/cmip6/data/CMIP6/HighResMIP/EC-Earth-Consortium/EC-Earth3P-HR/highres-future/r1i1p2f1/Amon/tas/gr/
-ls
-cd /badc/cmip6/data/CMIP6/HighResMIP/EC-Earth-Consortium/EC-Earth3P-HR/highres-future/r1i1p2f1/Amon/tas/gr/latest/tas_Amon_EC-Earth3P-HR_highres-future_r1i1p2f1_gr_20
-cd /badc/cmip6/data/CMIP6/HighResMIP/EC-Earth-Consortium/EC-Earth3P-HR/highres-future/r1i1p2f1/Amon/tas/gr/latest/
-ls
-01cd
-cd
-pwd
-ls exs/
-ls bash_scripts/
-$USER
-ls exs
-rm exs/i*
-ls exs
-vim exs/2015.1170414.err
-rm exs/*
-ls exs
-ls exs/
-vim exs/2015.1170459.err
-cd /
-ls
-exit
-cd /group_workspaces/
-ls
-ls jasmin
-ls jasmin2
-ls jasmin2/workshop/
-ls jasmin2/workshop/users/
-ls jasmin3
-ls jasmin4
-ls cems
-ls cems2
-cd
-ls
-exit
-top
-vim .bashrc 
-source .bashrc 
-xfer
-exit
-cp ../jvegas/config-developer.yml .
-ls
-cp ../jvegas/config-user.yml .
-ls
-ls -lt
-vim config-developer.yml 
-cp ../jvegas/launch_esmvaltool.sh .
-ls
-cd ..
-ls
-cd ..
-ls
-cd ..
-ls
-ls group_workspaces/
-cd
-ls
-cp ../jvegas/miniconda3/ .
-cp -r ../jvegas/miniconda3 .
-ls
-ls miniconda3/
-rm -r miniconda3/
-ls
-mv config-developer-jv.yml 
-mv config-developer.yml config-developer-jv.yml 
-mv config-user.yml config-user-jv.yml 
-ls
-mv config-* config-files/
-ls
-ls config-files/
-ls
-mkdir bash_scripts
-mv launch_esmvaltool.sh bash_scripts/
-ls
-ssh jasmin-sci1
-vim .bashrc 
-source .bashrc 
-sci3
-vim .bashrc 
-source .bashrc 
-xfer
-sci1
-sci2
-ls 
-ls ex04/
-ncdump -h ou
-module add NCO
-sci1
-cd /
-ls
-cd gws
-ls
-cd
-sha256sum 957d2f0f0701c3d1335e3b39f235d197837ad69a944fa6f5d8ad2c686b69df3b
-mkdir miniconda3
-cd miniconda3/
-sha256sum Miniconda3-latest-Linux-x86_64.sh
-sha256sum 957d2f0f0701c3d1335e3b39f235d197837ad69a944fa6f5d8ad2c686b69df3b
-sha256sum Miniconda3-latest-Linux-x86.sh
-idl
-ls
-cd
-vim .bashrc 
-cd miniconda3/
-ls
-sh Miniconda3-latest-Linux-x86_64.sh 
--u
-ls
-cd ..
-mv miniconda3/ miniconda/
-cd miniconda/
-sh Miniconda3-latest-Linux-x86_64.sh 
-python --version
-conda init
-conda activate
-exit
-conda activate /gws/smf/j04/primavera/envs/esmvaltool
-conda info --envs
-cd
-.vim bashrc
-vim .bashrc
-source .bashrc
-esmval_env 
-esmvaltool -v
-conda activate /gws/smf/j04/primavera/envs/esmval_dev
-esmvaltool -v
-conda activate /gws/smf/j04/primavera/envs/esmval_primavera
-esmvaltool -v
-pwd
-ls
-mv config-files/config-user.yml config-files/config-user-bsc.yml
-ls config-files/
-ls
-ls config-files/
-vim config-files/config-user-bsc.yml 
-ls
-ls miniconda
-rm -r miniconda/
-ls
-ls recipes/
-ls bash_scripts/
-ls -lt
-lt scripts/
-l scripts/
-ls -lt scripts/
-ls -ltbash
-ls -lt bash_scripts/
-chmod +x *.sh
-chmod +x bash_scripts/*.sh
-ls bash_scripts/
-vim laun
-vim bash_scripts/launch_esmvaltool.sh 
-vim recipes/recipe_martin_fig.yml 
-ls recipes/
-rm -r recipes/
-pwd
-ls
-rm *.yml
-ls
-mv datasets datasets.txt
-ls recipes/
-cd recipes/
-cp recipe_martin_fig.yml recipe_JASMIN.yml
-vim recipe_JASMIN.yml 
-cd ../config-files/
-vim config-user.yml 
-cd ..
-vim bash_scripts/exe
-ls bash_scripts/
-vim bash_scripts/esmvaltool_job.sh 
-vim recipes/recipe_JASMIN.yml 
-vim config-files/config-developer.yml 
-vim recipes/recipe_JASMIN.yml 
-cd bash_scripts/
-ls
-cd 
-cd bash_scripts/esmvaltool_job.sh 
-sh bash_scripts/esmvaltool_job.sh 
-vim recipes/recipe_JASMIN.yml 
-sh bash_scripts/esmvaltool_job.sh 
-exit
-python --version
-conda activate /gws/smf/j04/primavera/envs/esmvaltool
-sc1
-sci1
-exit
-cd /
-ls
-cd badc/cmip6/
-ls
-cd data/
 ls
 cd CMIP6/
 cd
@@ -996,5 +756,245 @@ cd /
 ls
 cd work/
 ls
+sci2
+exit
+cd /group_workspaces/
+ls
+cd jasmin4
+cd esmeval/obsdata-v2/
+ls
+ls Tier1
+ls Tier2
+ls Tier3
+cd Tier1
+ls CALIOP/
+ls
+ls AIRS
+ls ATSR
+ls CERES-EBAF/
+ls CloudSat/
+ls 
+ls ESACCI-GHG/
+ls GPCP-SG/
+ls ISCCP/
+ls
+ls JRA-55/
+ls MODIS/
+ls SSMI
+ls SSMI-MERIS/
+ls TRMM-L3/pr
+ls TRMM-L3/
+ls ghgcci/
+cd ..
+cd Tier2
+ls
+ls CALIPSO-GOCCP/OBS_CALIPSO-GOCCP_sat_3.1.2_cfMon_clcalipso_200701-201512.nc 
+ls CERES-EBAF/
+ls CRU/
+ls Duveiller2018/
+ls ESACCI-SOILMOISTURE/
+ls Eppley-VGPM-MODIS/
+ls
+ls GCP/OBS_GCP_reanaly_2018_
+ls GHCN/
+las HadCRUT3
+la HadCRUT3
+ls HadCRUT3
+ls HadCRUT4
+ls ../Tier1/GPCP-SG/
+ls HadCRUT4-
+ls HadCRUT4-clim/
+ls HadISST/
+ls ISCCP-FH/
+ls Landschuetzer2016/
+ls
+ls NCEP/
+ls
+ls OSI-450-
+ls OSI-450-nh/
+ls
+ls OSI-450-sh/
+ls
+ls PATMOS-x/
+ls PHC/
+ls PIOMAS/
+ls
+ls WOA/
+cd ../Tier3
+ls
+ls ERA-Interim/
+ls ../Tier2/CRU/
+ls ../Tier2/
+cd /badc/cmip6/data/
+ls
+cd CMIP6/CMIP/
+find . GISS*
+ls
+cd /group_workspaces/
+cd /group_workspaces/jasmin4/esmeval/
+ls
+cd obsdata-v2/
+ls
+ls Tier3/ERA-Interim/OBS6_ERA-Interim_reanaly_1_Amon_pr_
+cd
+pwd
+ls
+mkdir job_output
+cd job_output/
+pwd
+exit
+vim recipes/recipe_martin_fig.yml 
+ls recipes/
+vim recipes/recipe_JASMIN.yml 
+vim scripts/martin_plots.py 
+sci2
+exit
+cd /badc/cmip6/data/CMIP6/HighResMIP/
+ls
+ls CMCC/
+ls CNRM-CERFACS/
+ls EC-Earth-Consortium/
+ls ECMWF/
+ls INM/
+ls MOHC/
+ls MPI-M/
+ls NERC/
+ls CMCC/CMCC-CM2-HR4/
+ls -lt  CMCC/CMCC-CM2-HR4/
+ls -lt  CMCC/CMCC-CM2-VHR4/
+ls IPSL/
+ls ECMWF/ECMWF-IFS-HR/
+exi
+exit
+sci2
+exit
+cd /work/scratch-nompiio/pcos/
+ls -lt
+vim recipe_JASMIN_20200525_100733/
+vim recipe_JASMIN_20200525_100733/run/mean/mean/log.txt 
+ls
+cd
+ls
+ls scripts/
+rm scripts/martin_plots.py 
+mv martin_plots.py scripts/
+ls
+ls scripts/
+ls -lt
+ls -lt scripts/
+esmval_env 
+vim bash_scripts/execute_recipe.sh 
+sh bash_scripts/execute_recipe.sh 
+vim /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/log.txt
+ls -lt
+ls -lt scripts/
+vim /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/log.txt
+cd /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean; MPLBACKEND="Agg" /gws/smf/j04/primavera/envs/esmval_primavera/bin/python /home/users/pcos/scripts/martin_plots.py /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/run/mean/mean/settings.yml -f
+ls
+cd
+ls /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/
+ls /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/plots/mean/mean/ 
+cp /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/plots/mean/mean/ figures/
+cp -r /work/scratch-nompiio/pcos/recipe_JASMIN_20200526_074431/plots/mean/mean/ figures/
+ls figures/
+ls -lt figures/
+ls -lt figures/mean/
+git .add
+git add .
+git commit -m "martin_figures.py rework"
+git push origin master
+vim recipes/recipe_JASMIN.yml 
+vim bash_scripts/execute_recipe.sh 
+ls
+ls -lt
+vim bash_scripts/execute_recipe.sh 
+sh bash_scripts/execute_recipe.sh 
+wq
+vim bash_scripts/execute_recipe.sh 
+vim recipes/recipe_JASMIN.yml 
+sh bash_scripts/execute_recipe.sh 
+vim recipes/recipe_JASMIN.yml 
+vim scripts/martin_plots.py 
+vim recipes/recipe_
+vim recipes/recipe_JASMIN.yml 
+cd recipes/
+ls
+cp recipe_JASMIN.yml CRU.yml GHCN.yml 
+cp recipe_JASMIN.yml CRU.yml
+cp recipe_JASMIN.yml GHCN.yml
+cp recipe_JASMIN.yml HadCRUT4.yml
+cp recipe_JASMIN.yml NCEP.yml
+ls 
+vim CRU.yml 
+vim GHCN.yml 
+vim HadCRUT4.yml 
+vim NCEP.yml 
+cp recipe_JASMIN.yml ERAINTERIM.yml
+vim ERAINTERIM.yml 
+cd ..
+cd bash_scripts/
+cat execute_recipe.sh 
+cat submit-all.sh 
+vim job.sh
+bjobs
+vim execute_recipe.sh 
+vim job.sh
+ls ../recipes/
+vim job.sh
+bsub < job.sh 
+vim job.sh
+cd
+vim .bashrc
+vim job.sh
+cd bash_scripts/
+vim job.sh
+bsub < job.sh 
+bjobs
+vim job.sh
+bjobs
+cd
+ls
+vim job_output/1587812.err 
+vim bash_scripts/job.sh 
+bsub < bash_scripts/job.sh 
+bjobs
+vim recipes/CRU.yml 
+bjobs
+vim recipes/recipe_JASMIN.yml 
+ls /badc/cmip6/data/CMIP6/CMIP/AWI/AWI-CM-1-1-MR/piControl/r1i1p1f1/Amon/tas/gn/
+bjobs
+cd /gws/nopw/j04/primavera5/stream1/CMIP6/HighResMIP
+ls
+ls AWI/AWI-CM-1-0-HR/
+ls AWI
+ls CMCC/
+ls CNRM-CERFACS/
+ls EC-Earth-Consortium/
+ls ECMWF/
+ls MOHC/
+ls MPI-M/
+ls NERC/
+ls CMCC/CMCC-CM2-HR4/
+ls CMCC/CMCC-CM2-VHR4/
+ls AWI/AWI-CM-1-0-LR/
+ls AWI/AWI-CM-1-0-HR/hist-1950/r1i1p1f002/cd
+cd
+bjobs
+ls
+cd job_output/
+ls
+vim 1588487.out 
+cd ..
+vim recipes/CRU.yml 
+vim recipes/GHCN.yml 
+vim recipes/HadCRUT4.yml 
+vim recipes/ERAINTERIM.yml 
+vim recipes/NCEP.yml 
+vim bash_scripts/job.sh 
+vim job_output/1588487.err 
+vim bash_scripts/job.sh 
+bsub < bash_scripts/job.sh 
+bjobs
+exit
 sci2
 exit

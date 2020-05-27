@@ -1,0 +1,110 @@
+# ESMValToo
+---
+documentation:
+  description: |
+  authors:
+    - vegas-regidor_javier
+datasets:
+
+#### observations ####
+ # CRU
+   - {dataset: CRU, project: OBS, tier: 2, type: reanaly, version: TS4.02, start_year: 1960, end_year: 2014} 
+  
+#### historical exp #####
+
+
+#   - &cmip {dataset: AWI-CM-1-1-MR, project: CMIP6, ensemble: r1i1p1f1, exp: ssp585, grid: gn, start_year: 1960, end_year: 2014}
+#   - {<<: *cmip, dataset: BCC-CSM2-MR} 
+   #- {<<: *cmip, dataset: BCC-ESM1} 
+   #- {<<: *cmip, dataset: TaiESM1} 
+   #- {<<: *cmip, dataset: FGOALS-f3-L, grid: gr} 
+   #- {<<: *cmip, dataset: FGOALS-g3} 
+   #- {<<: *cmip, dataset: EC-Earth3,  grid: gr, ensemble: r2i1p1f1} 
+   #- {<<: *cmip, dataset: FIO-ESM-2-0} 
+   #- {<<: *cmip, dataset: MRI-ESM2-0} 
+   #- {<<: *cmip, dataset: GFDL-CM4, grid: gr1} 
+   #- {<<: *cmip, dataset: SAM0-UNICON} 
+   #- {<<: *cmip, dataset: CIESM, grid: gr} 
+   #- {<<: *cmip, dataset: MCM-UA-1-0} 
+   # ----------------- INSTITUTE NOT FOUND -------------------- #
+   #- {<<: *cmip, dataset: CAS-ESM2-0, institute: CAS} 
+   #- {<<: *cmip, dataset: E3SM-1-1, institute: E3SM-Project} 
+   #- {<<: *cmip, dataset: E3SM-1-1-ECA, institute: E3SM-Project} 
+   #- {<<: *cmip, dataset: GISS-E2-1-G, institute: NASA-GISS} 
+   #- {<<: *cmip, dataset: GISS-E2-1-G-CC, institute: NASA-GISS} 
+   #- {<<: *cmip, dataset: GISS-E2-1-H, institute: NASA-GISS} 
+
+#### future exp ####
+
+   - &HighResMIP {dataset: CMCC-CM2-HR4, project: CMIP6, exp: highres-future, ensemble: r1i1p1f1, grid: gn, start_year: 2015, end_year: 2050}
+   - {<<: *HighResMIP, dataset: CMCC-CM2-VHR4} 
+   - {<<: *HighResMIP, dataset: CNRM-CM6-1, grid: gr, ensemble: r1i1p1f2} 
+   - {<<: *HighResMIP, dataset: CNRM-CM6-1-HR, grid: gr, ensemble: r1i1p1f2} 
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-HM, ensemble: [r1i1p1f1, r1i2p1f1]} 
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-MM, ensemble: [r1i1p1f1, r1i2p1f1]} 
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-LL, ensemble: [r1i1p1f1, r1i2p1f1]}  
+   - {<<: *HighResMIP, dataset: EC-Earth3P, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1]}  
+   - {<<: *HighResMIP, dataset: EC-Earth3P-HR, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1]} 
+   # Historical HighResMIP
+   - {<<: *HighResMIP, dataset: CMCC-CM2-HR4, exp: hist-1950, start_year: 1960, end_year: 2014}
+   - {<<: *HighResMIP, dataset: CMCC-CM2-VHR4, exp: hist-1950, start_year: 1960, end_year: 2014} 
+   - {<<: *HighResMIP, dataset: CNRM-CM6-1, grid: gr, ensemble: r1i1p1f2, exp: hist-1950, start_year: 1960, end_year: 2014} 
+   - {<<: *HighResMIP, dataset: CNRM-CM6-1-HR, grid: gr, ensemble: r1i1p1f2, exp: hist-1950, start_year: 1960, end_year: 2014} 
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-HM, ensemble: [r1i1p1f1, r1i2p1f1], exp: hist-1950, start_year: 1960, end_year: 2014} 
+   - {<<: *HighResMIP, dataset: HadGEM3-GC31-MM, ensemble: [r1i1p1f1, r1i2p1f1], exp: hist-1950, start_year: 1960, end_year: 2014} 
+   - {<<: *HighResMIP, dataset: EC-Earth3P, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1], exp: hist-1950, start_year: 1960, end_year: 2014}  
+   - {<<: *HighResMIP, dataset: EC-Earth3P-HR, grid: gr, ensemble: [r1i1p2f1, r2i1p2f1, r3i1p2f1], exp: hist-1950, start_year: 1960, end_year: 2014} 
+
+   #- &ScenarioMIP {dataset: AWI-CM-1-1-MR, project: CMIP6, ensemble: r1i1p1f1, exp: ssp585, grid: gn, start_year: 2015, end_year: 2050}
+   #- {<<: *ScenarioMIP, dataset: BCC-CSM2-MR} 
+   #- {<<: *ScenarioMIP, dataset: BCC-ESM1} 
+   #- {<<: *ScenarioMIP, dataset: TaiESM1} 
+   #- {<<: *ScenarioMIP, dataset: FGOALS-f3-L, grid: gr} 
+   #- {<<: *ScenarioMIP, dataset: FGOALS-g3} 
+   #- {<<: *ScenarioMIP, dataset: EC-Earth3,  grid: gr, ensemble: r2i1p1f1} 
+   #- {<<: *ScenarioMIP, dataset: FIO-ESM-2-0} 
+   #- {<<: *ScenarioMIP, dataset: MRI-ESM2-0} 
+   #- {<<: *ScenarioMIP, dataset: GFDL-CM4, grid: gr1} 
+   #- {<<: *ScenarioMIP, dataset: SAM0-UNICON} 
+   #- {<<: *ScenarioMIP, dataset: CIESM, grid: gr} 
+   #- {<<: *ScenarioMIP, dataset: MCM-UA-1-0} 
+   # ----------------- INSTITUTE NOT FOUND -------------------- #
+   #- {<<: *ScenarioMIP, dataset: CAS-ESM2-0, institute: CAS} 
+   #- {<<: *ScenarioMIP, dataset: E3SM-1-1, institute: E3SM-Project} 
+   #- {<<: *ScenarioMIP, dataset: E3SM-1-1-ECA, institute: E3SM-Project} 
+   #- {<<: *ScenarioMIP, dataset: GISS-E2-1-G, institute: NASA-GISS} 
+   #- {<<: *ScenarioMIP, dataset: GISS-E2-1-G-CC, institute: NASA-GISS} 
+   #- {<<: *ScenarioMIP, dataset: GISS-E2-1-H, institute: NASA-GISS} 
+
+preprocessors:
+  med:
+    regrid:
+      target_grid: 1x1
+      scheme: linear
+    extract_region:
+      start_longitude: -10
+      end_longitude: 40
+      start_latitude: 25
+      end_latitude: 50
+    extract_season:
+      season: 'djf'
+    annual_statistics:
+      operator: 'mean'
+    # regrid_time:
+    #   frequency: yr
+
+diagnostics:
+  mean:
+    description: "Calculate MedR seasonal trends diagnostic"
+    variables:
+      tas:
+       mip: Amon
+       short_name: tas
+       preprocessor: med
+      pr:
+       short_name: pr
+       mip: Amon
+       preprocessor: med
+    scripts:
+      mean:
+       script: /home/users/pcos/scripts/martin_plots.py

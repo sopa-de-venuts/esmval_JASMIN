@@ -1,0 +1,7 @@
+Not a conda environment: /gws/smf/j04/primavera
+/home/users/pcos/.lsbatch/1590488625.1587812.shell: line 12: /envs/esmval_primavera: No such file or directory
+/home/users/pcos/.lsbatch/1590488625.1587812.shell: line 14: esmvaltool: command not found
+/home/users/pcos/.lsbatch/1590488625.1587812.shell: line 16: esmvaltool: command not found
+/home/users/pcos/.lsbatch/1590488625.1587812.shell: line 18: esmvaltool: command not found
+/home/users/pcos/.lsbatch/1590488625.1587812.shell: line 20: esmvaltool: command not found
+/home/users/pcos/.lsbatch/1590488625.1587812.shell: line 22: esmvaltool: command not found

@@ -1,0 +1,60 @@
+Sender: LSF System <lsfadmin@host264.jc.rl.ac.uk>
+Subject: Job 1587812: <obs_assessment_job> in cluster <lotus> Exited
+
+Job <obs_assessment_job> was submitted from host <jasmin-sci2-panfs.ceda.ac.uk> by user <pcos> in cluster <lotus>.
+Job was executed on host(s) <host264.jc.rl.ac.uk>, in queue <long-serial>, as user <pcos> in cluster <lotus>.
+</home/users/pcos> was used as the home directory.
+</home/users/pcos/job_output/> was used as the working directory.
+Started at Results reported on 
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -q long-serial
+#BSUB -n 1
+#BSUB -cwd /home/users/pcos/job_output/ 
+#BSUB -oo %J.out
+#BSUB -eo %J.err
+#BSUB -J obs_assessment_job 
+#BSUB -W 02:30
+
+source /home/users/jvegas/miniconda3/bin/activate /gws/smf/j04/primavera
+/envs/esmval_primavera
+
+esmvaltool -c /home/users/pcos/config-files/config-user.yml /home/users/pcos/recipes/CRU.yml
+
+esmvaltool -c /home/users/pcos/config-files/config-user.yml /home/users/pcos/recipes/GHCN.yml
+
+esmvaltool -c /home/users/pcos/config-files/config-user.yml /home/users/pcos/recipes/HadCRUT4.yml
+
+esmvaltool -c /home/users/pcos/config-files/config-user.yml /home/users/pcos/recipes/NCEP.yml
+
+esmvaltool -c /home/users/pcos/config-files/config-user.yml /home/users/pcos/recipes/ERAINTERIM.yml
+
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   0.83 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   7 sec.
+    Turnaround time :                            7 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <1587812.err> for stderr output of this job.
+

@@ -105,7 +105,7 @@ class Example(object):
                 if pr_exist:
                     pr = self.regrid_time(pr, start_year_rean, end_year_rean)
                     rean_ls_pr.append(pr)
-            elif ((activity == 'HighResMIP')and(exp == 'highres-future')) or ((activity == 'cmip')and(exp == 'ssp585')):
+            elif ((activity.lower() == 'highresmip')and(exp == 'highres-future')) or ((activity.lower() == 'scenariomip')and(exp == 'ssp585')):
                 if (start_year_ssp == 0) & (end_year_ssp == 0):
                     start_year_ssp = variables['tas'][0]['start_year']
                     end_year_ssp = variables['tas'][0]['end_year']
@@ -115,7 +115,7 @@ class Example(object):
                 if pr_exist:
                     pr = self.regrid_time(pr, start_year_ssp, end_year_ssp)
                     ssp_ls_pr.append(pr)
-            elif ((activity == 'HighResMIP')and(exp == 'hist-1950')) or ((activity == 'cmip')and(exp == 'historical')):
+            elif ((activity.lower() == 'highresmip')and(exp == 'hist-1950')) or ((activity.lower() == 'cmip')and(exp == 'historical')):
                 if (start_year_hist == 0) & (end_year_hist == 0):
                     start_year_hist = variables['tas'][0]['start_year']
                     end_year_hist = variables['tas'][0]['end_year']
@@ -131,7 +131,7 @@ class Example(object):
 
         # COMPUTE EVERYTHING & PLOT
         # TAS
-        if (not rean_ls_pr) or (not ssp_ls_pr) or (not hist_ls_pr):
+        if (not rean_ls_tas) or (not ssp_ls_tas) or (not hist_ls_tas):
             print('No temperature to diagnose')
         else:
             cube_ls_tas, ts_ls_tas = self.compute(rean_ls_tas, ssp_ls_tas, hist_ls_tas, 'tas')
